@@ -1,2 +1,2 @@
-# kite
+# _kite_
 kallisto index tag extractor
