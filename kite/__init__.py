@@ -14,10 +14,13 @@ def make_mismatch_map(filename):
     odict = OrderedDict()
     print('Read the following tags:')
     for record in SeqIO.parse(filename, "fasta"):
-        if len(record)%2 == 0:
-            print('Length of tag is even! kallisto needs odd k-mers. \n'
+        sample_tag_length = len(record.seq)
+        if sample_tag_length%2 == 0:
+            print('Length of the following tag is even:\n',record.name, '\n', record.seq, '\n',
+                  ' kallisto needs odd k-mers. \n',
                   'Truncate the tag by one bp or increate it by one')
-            return: None
+            return None
+
         counter = 0
         print(record.seq)
         odict[record.name] = str(record.seq)[:sample_tag_length]
@@ -54,3 +57,10 @@ def make_mismatch_map(filename):
                 odict[record.name + '+-+' + str(pos) + '-3'] = "".join(barcode)
 
     return odict
+
+
+def save_mismatch_map(tagmap, tagmap_file_path):
+    tagmap_file = open(tagmap_file_path, "w+")
+    for i in list(tag_map.keys()):
+        tagmap_file.write(">" + i + "\n" +tag_map[i] + "\n")
+    tagmap_file.close()
