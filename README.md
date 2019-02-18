@@ -8,7 +8,7 @@ kallisto bus, introduced in v0.45, allows us to quickly demultiplex single cell 
 
 The notebook [kite_citeseq_SRR8281307](https://github.com/pachterlab/kite/blob/master/docs/kite_citeseq_SRR8281307.ipynb) in the `docs` folder implements the complete kite pipeline. Note that you must have [kallisto](https://pachterlab.github.io/kallisto/download) and [BUStools](https://github.com/BUStools/bustools/releases) installed to run the entire notebook (or if you can't install just call call the executable file for kallisto and BUStools)
 
-## kitw Utilities
+## _kite_ Utilities
 
 #### `make_mismatch_map(filename)`
 
