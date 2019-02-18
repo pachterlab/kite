@@ -2,6 +2,14 @@
 
 This package offers a few utilities to help with demultiplexing samples using kallisto bus. 
 
+
+
+kallisto bus, introduced in v0.45, allows us to quickly demultiplex single cell samples by just having a list of acceptable tags, regardless of where the tag appears.
+
+The notebook [kite_citeseq_SRR8281307](https://github.com/pachterlab/kite/blob/master/docs/kite_citeseq_SRR8281307.ipynb) in the `docs` folder implements the complete kite pipeline. Note that you must have [kallisto](https://pachterlab.github.io/kallisto/download) and [BUStools](https://github.com/BUStools/bustools/releases) installed to run the entire notebook (or if you can't install just call call the executable file for kallisto and BUStools)
+
+## kitw Utilities
+
 #### `make_mismatch_map(filename)`
 
 This function returns all sample tags and and their single base mismatches (hamming distance 1). 
@@ -10,11 +18,16 @@ It returns a dictionary 4 * tag_length * number_of_tags the size of the original
 
 e.g. tags AA and TT  result in 4*2*2 = 16 tags.
 
+
 #### `save_mismatch_map(tagmap, tagmap_file_path)`
 
 Saves the generated tagmap to file in fasta format for building the kallisto index.
 
+
+
 ## Retrieving tags for sample demultiplexing with kallisto bus: Cell hashing as an example
+
+The notebook [kite_citeseq_SRR8281307](https://github.com/pachterlab/kite/blob/master/docs/kite_citeseq_SRR8281307.ipynb) in the `docs` folder implements the complete kite pipeline
 
 The examplation below uses as an example the tag structure from the article **Publication: Cell hashing enable sample multiplexing, multiplet identification and super-loading on droplet-based single cell RNA-sequencing platforms**, puublished on Genome Biology: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1603-1
 
