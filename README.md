@@ -3,7 +3,12 @@
 This package offers a few utilities to help with demultiplexing samples using kallisto bus. 
 
 `make_mismatch_map(filename)`
-This function returns all sample tags and and their single base mismatches (hamming distance 1). It returns a dictionary 4*tag_length*number_of_tags the size of the original tag) e.g. tags AA and TT  result in 4*2*2 = 16 tags.
+
+This function returns all sample tags and and their single base mismatches (hamming distance 1). 
+
+It returns a dictionary 4 * tag_length * number_of_tags the size of the original tag.
+
+e.g. tags AA and TT  result in 4*2*2 = 16 tags.
 
 
 
