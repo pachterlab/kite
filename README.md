@@ -2,7 +2,7 @@
 
 This package offers a few utilities to help with demultiplexing samples using kallisto bus. 
 
-`make_mismatch_map(filename)`
+#### `make_mismatch_map(filename)`
 
 This function returns all sample tags and and their single base mismatches (hamming distance 1). 
 
@@ -10,7 +10,9 @@ It returns a dictionary 4 * tag_length * number_of_tags the size of the original
 
 e.g. tags AA and TT  result in 4*2*2 = 16 tags.
 
+#### `save_mismatch_map(tagmap, tagmap_file_path)`
 
+Saves the generated tagmap to file in fasta format for building the kallisto index.
 
 ## Retrieving tags for sample demultiplexing with kallisto bus: Cell hashing as an example
 
