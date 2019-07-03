@@ -33,7 +33,7 @@ The featuremap.py program is run prior to the standard kallisto | bustools pipel
 
 FeatureBarcodes.csv: path to a .csv-formatted file containing Feature Barcode names and sequences and a header (example below).
 
-returns mismatch t2g and fasta files saved to the working directory
+returns FeaturesMismatch.t2g FeaturesMismatch.fa files saved to the working directory
 
 ### NOTE: Use only odd values for k-mer length during `kallisto index` 
 To avoid potential pseudoalignment errors arising from inverted repeats, kallisto only accepts odd values for the k-mer length `-k`. If your Feature Barcodes have an even length, just add an appropriate constant base on one side and follow the protocol as suggested. For example, append an __A__ base to the CD3_TotalSeqB barcode AACAAGACCCTTGAG → AACAAGACCCTTGAGA. Adding constant bases in this way increases specificity and may be useful for experiments with low sequencing quality or very short Feature Barcodes. 
