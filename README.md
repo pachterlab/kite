@@ -20,6 +20,7 @@ $ git clone https://github.com/pachterlab/kite
 ## System Requirements
 Feature Barcode pre-processing requires up-to-date versions of `kallisto` and `bustools`
 ```
+Python3
 kallisto v0.46 or higher
 bustools v0.39.0 or higher
 ```
