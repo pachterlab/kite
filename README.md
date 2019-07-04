@@ -33,10 +33,10 @@ The featuremap.py program is run prior to the standard kallisto | bustools pipel
 
 FeatureBarcodes.csv: path to a .csv-formatted file containing Feature Barcode names and sequences
 
---t2g Filepath for newly generated .t2g file. Default ./FeaturesMismatch.t2g <br>
---fa Filepath for newly generated .fa file. Default ./FeaturesMismatch.fa <br>
---header Optional flag. Use --header if your CSV file contains a header. <br>
---quiet Optional flag. Do not print run information to standard out
+--t2g   Filepath for newly generated .t2g file. Default ./FeaturesMismatch.t2g <br>
+--fa    Filepath for newly generated .fa file. Default ./FeaturesMismatch.fa <br>
+--header  Optional flag. Use --header if your CSV file contains a header. <br>
+--quiet   Optional flag. Do not print run information to standard out
 
 returns FeaturesMismatch.t2g FeaturesMismatch.fa files saved to the working directory
 
