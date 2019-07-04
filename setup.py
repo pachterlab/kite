@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='kite',
-      version='0.0.1',
+      version='0.0.2',
       description='Fast and accurate quantification of single-cell Feature Barcoding experiments.',
       url='http://github.com/pachterlab/kite',
       author='Eduardo da Veiga Beltrame, Jase Gehring',
