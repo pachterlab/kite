@@ -28,10 +28,15 @@ For downstream analysis, we use [ScanPy](https://scanpy.readthedocs.io/en/stable
 
 ## kite pre-processing
 
-#### `featuremap.py FeatureBarcodes.csv`
-The featuremap.py program is run prior to the standard kallisto | bustools pipeline. It takes a .csv input (containing a header) and outputs "mismatch" transcript-to-gene (t2g) and fasta files that can be used by kallisto | bustools to complete pre-processing (see below and Vignettes). The program takes a single argument, FeatureBarcodes.csv, and outputs mismatch fasta and t2g files to the working directory.
+#### `featuremap.py FeatureBarcodes.csv --t2g ./FeaturesMismatch.t2g --fa ./FeaturesMismatch.fa --header --quiet`
+The featuremap.py program is run prior to the standard kallisto | bustools pipeline. It takes a .csv input and outputs "mismatch" transcript-to-gene (t2g) and fasta files that can be used by kallisto | bustools to complete pre-processing (see below and Vignettes). The program takes a single argument, FeatureBarcodes.csv, and outputs mismatch fasta and t2g files to the working directory.
 
-FeatureBarcodes.csv: path to a .csv-formatted file containing Feature Barcode names and sequences and a header (example below).
+FeatureBarcodes.csv: path to a .csv-formatted file containing Feature Barcode names and sequences
+
+--t2g Filepath for newly generated .t2g file. Default ./FeaturesMismatch.t2g
+--fa Filepath for newly generated .fa file. Default ./FeaturesMismatch.fa
+--header Optional flag. Use --header if your CSV file contains a header.
+--quiet Optional flag. Do not print run information to standard out
 
 returns FeaturesMismatch.t2g FeaturesMismatch.fa files saved to the working directory
 
