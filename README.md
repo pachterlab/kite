@@ -31,12 +31,12 @@ For downstream analysis, we use [ScanPy](https://scanpy.readthedocs.io/en/stable
 #### `featuremap.py FeatureBarcodes.csv --t2g ./FeaturesMismatch.t2g --fa ./FeaturesMismatch.fa --header --quiet`
 The featuremap.py program is run prior to the standard kallisto | bustools pipeline. It takes a .csv input and outputs "mismatch" transcript-to-gene (t2g) and fasta (fa) files that can be used by kallisto | bustools to complete pre-processing (see below and Vignettes). The program takes a single argument, FeatureBarcodes.csv, and outputs mismatch fasta and t2g files to the working directory.
 
-FeatureBarcodes.csv: path to a .csv-formatted file containing Feature Barcode names and sequences
+`FeatureBarcodes.csv` path to a .csv-formatted file containing Feature Barcode names and sequences
 
---t2g     Filepath for newly generated .t2g file. Default ./FeaturesMismatch.t2g <br>
---fa      Filepath for newly generated .fa file. Default ./FeaturesMismatch.fa <br>
---header  Optional flag. Use --header if your CSV file contains a header. <br>
---quiet   Optional flag. Do not print run information to standard out
+`--t2g`     Filepath for newly generated .t2g file. Default ./FeaturesMismatch.t2g <br>
+`--fa`      Filepath for newly generated .fa file. Default ./FeaturesMismatch.fa <br>
+`--header`  Optional flag. Use --header if your CSV file contains a header. <br>
+`--quiet`   Optional flag. Do not print run information to standard out
 
 returns "mismatch" fasta and t2g files saved to the specified directory
 
@@ -139,7 +139,7 @@ $ bustools sort -t 4 -o ./output_sorted.bus ./output_corrected.bus
 $ mkdir ./featurecounts/
 ```
 ```
-$ bustools count -o ./featurecounts/featurecounts --genecounts -g ./Features_t2g.txt -e ./matrix.ec -t ./transcripts.txt ./output_sorted.bus
+$ bustools count -o ./featurecounts/featurecounts --genecounts -g ./FeaturesMismatch.t2g -e ./matrix.ec -t ./transcripts.txt ./output_sorted.bus
 ```
 #### 6. Analyze count matrix
 `Bustools count` outputs a .mtx-formatted Features x Cells matrix and vectors of gene names and cell barcodes (genes.txt and barcodes.txt). From here, standard analysis packages like ScanPy and Seurat can be used to continue the Feature Barcode analysis. For details, check out the [Jupyter notebook](https://github.com/pachterlab/kite/tree/master/docs/).
