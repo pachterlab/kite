@@ -4,7 +4,6 @@ import os
 from collections import OrderedDict
 
 parser=argparse.ArgumentParser()
-<<<<<<< HEAD
 parser.add_argument("FeatureRefCSV", help="path to csv file with whitelist Feature Barcodes")
 parser.add_argument("--t2g", help="path to output t2g file, default ./FeaturesMismatch.t2g", default="./FeaturesMismatch.t2g", type=str)
 parser.add_argument("--fa", help="path to output fasta file, default ./FeaturesMismatch.fa", default="./FeaturesMismatch.fa", type=str)
@@ -17,31 +16,17 @@ def version():
 
 """
 get_tags requires a csv-formatted file of feature barcode names and sequences. If your CSV file contains a header, use the --header flag. 
-=======
-parser.add_argument("ref", help="feature csv file")
-args=parser.parse_args()
-
-def version():
-    print("0.0.1")
-
-"""
-get_tags requires a csv-formatted file of feature barcode names and sequences. The csv file must have a header in the first row.
->>>>>>> 46bef43a3d5dda14c7ef99640b7de4b5f64efef5
 """    
 def get_tags(filename):
     with open(filename, mode='r') as csv_file:
         csv_reader = csv.reader(csv_file)
         tags = {}
-<<<<<<< HEAD
         if args.header: 
             next(csv_reader) #skip header unless the no_header option is specified
             if not args.quiet: print('\nCSV includes header row\n')
         else: 
             if not args.quiet: 
                 if not args.quiet: print('\nCSV does not include header row.\n')
-=======
-        next(csv_reader) #skip header
->>>>>>> 46bef43a3d5dda14c7ef99640b7de4b5f64efef5
         for row in csv_reader:
             tags[row[0].strip()] = row[1].strip()
     return tags
@@ -54,20 +39,12 @@ def make_mismatch_map(FeatureDict):
         seq=FeatureDict[item]
         if counter == 0:
             feature_barcode_length = len(seq)
-<<<<<<< HEAD
             if not args.quiet: print("Feature Barcode Length: "+str(feature_barcode_length)+'\n')
             if not args.quiet: print('Read ' + str(len(FeatureDict)) +' Feature Barcodes:\n')
             counter+=1
         if not args.quiet:
             print(name)
             print(seq)
-=======
-            print("Feature Barcode Length: "+str(feature_barcode_length)+'\n')
-            print('Read the following Feature Barcodes:')
-            counter+=1
-        print(name)
-        print(seq)
->>>>>>> 46bef43a3d5dda14c7ef99640b7de4b5f64efef5
         odict[name+'-*-*'] = str(seq)[:feature_barcode_length]
         for pos in range(feature_barcode_length):
             letter =str(seq)[pos]
@@ -122,7 +99,6 @@ def write_mismatch_map(tag_map, mismatch_t2g_path, mismatch_fasta_path):
 #wrapper function for make_mismatch_map and write_mismatch_map
 def kite_mismatch_maps(FeatureDict, mismatch_t2g_path, mismatch_fasta_path):
     write_mismatch_map(make_mismatch_map(FeatureDict), mismatch_t2g_path, mismatch_fasta_path)
-<<<<<<< HEAD
     if not args.quiet: print("\nThe t2g and fasta files are now ready \n")
 
 tags = get_tags(args.FeatureRefCSV)
@@ -130,15 +106,6 @@ tags = get_tags(args.FeatureRefCSV)
 t2g_path = args.t2g
 
 fasta_path= args.fa
-=======
-    print("\n The t2g and fasta files are now ready \n")
-
-tags = get_tags(args.ref)
-
-t2g_path = "./FeaturesMismatch.t2g"
-
-fasta_path= "./FeaturesMismatch.fa"
->>>>>>> 46bef43a3d5dda14c7ef99640b7de4b5f64efef5
 
 kite_mismatch_maps(tags, t2g_path, fasta_path)
 
