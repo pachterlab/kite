@@ -29,7 +29,7 @@ For downstream analysis, we use [ScanPy](https://scanpy.readthedocs.io/en/stable
 ## kite pre-processing
 
 #### `featuremap.py FeatureBarcodes.csv --t2g ./FeaturesMismatch.t2g --fa ./FeaturesMismatch.fa --header --quiet`
-The featuremap.py program is run prior to the standard kallisto | bustools pipeline. It takes a .csv input and outputs "mismatch" transcript-to-gene (t2g) and fasta (fa) files that can be used by kallisto | bustools to complete pre-processing (see below and Vignettes). The program takes a single argument, FeatureBarcodes.csv, and outputs mismatch fasta and t2g files to the working directory.
+The featuremap.py program is run prior to the standard kallisto | bustools pipeline. It takes a .csv input and outputs "mismatch" transcript-to-gene (t2g) and fasta (fa) files that can be used by kallisto | bustools to complete pre-processing (see below and Vignettes). The program takes a single argument, FeatureBarcodes.csv, and outputs mismatch fasta and t2g files.
 
 `FeatureBarcodes.csv` path to a .csv-formatted file containing Feature Barcode names and sequences
 
