@@ -47,12 +47,15 @@ To avoid potential pseudoalignment errors arising from inverted repeats, kallist
 
 The [docs](https://github.com/pachterlab/kite/tree/master/docs) folder contains a complete analysis ([10x_kiteVignette.ipynb](https://github.com/pachterlab/kite/tree/master/docs/10X_kiteVignette.ipynb)) for a 10x dataset collected on ~730 peripheral blood mononuclear cells (PBMCs) labeled with 17 unique Feature Barcoded antibodies. The dataset can be found [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets/3.0.0/pbmc_1k_protein_v3). 
 
-### 1. Download materials
-Prepare a folder:
+### 0. Clone the GitHub repository
+Prepare a folder and clone the repo:
 ```
 $ mkdir kallisto_bustools_kite/
 $ cd kallisto_bustools_kite/
+$ git clone https://github.com/pachterlab/kite
 ```
+
+### 1. Download materials
 Download and unzip the following files.
 ```
 $ wget http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_protein_v3/pbmc_1k_protein_v3_fastqs.tar
